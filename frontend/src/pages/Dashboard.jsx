@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { MdCategory, MdTableBar } from "react-icons/md";
 import { BiDish } from "react-icons/bi";
-import Metrics from '../components/dashboard/metrics';
+// import Metrics from '../components/dashboard/metrics';
 import RecentOrders from '../components/dashboard/RecentOrders';
 import Modal from '../components/dashboard/Modal';
 import CategoryModal from '../components/dashboard/CategoryModal';
@@ -85,7 +85,7 @@ const Dashboard = () => {
 
             </div>
            
-              {activeTab === "Metrics" && <Metrics/>}      
+              {/* {activeTab === "Metrics" && <Metrics/>}       */}
               {activeTab === "Orders" && <RecentOrders />}      
 
            {isTableModalOpen && <Modal setIsTableModalOpen={setIsTableModalOpen }/>}
