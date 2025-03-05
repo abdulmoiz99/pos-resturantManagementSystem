@@ -13,6 +13,7 @@ const app = express();
 const PORT = config.port;
 
 connectDB();
+app.get('/favicon.ico', (req, res) => res.status(204).end());
 
 //Middlewares
 app.use(cors({
@@ -30,7 +31,6 @@ app.get("/", (req, res) => {
     // throw err;
 
 })
-app.get('/favicon.ico', (req, res) => res.status(204).end());
 
 
 // Other Endpoints
