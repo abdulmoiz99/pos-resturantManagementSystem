@@ -26,6 +26,7 @@ app.use(cookieParser())
 
 app.use((req, res, next) => {
     if (req.path === "/favicon.ico" || req.path === "/favicon") {
+        console.log("App has been deployed successfully")
         return res.status(204).end(); // No Content response
     }
     next();
