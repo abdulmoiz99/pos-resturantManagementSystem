@@ -13,7 +13,8 @@ const app = express();
 const PORT = config.port;
 
 connectDB();
-app.get('/favicon.ico', (req, res) => res.status(204).end());
+// app.get('/favicon.ico', (req, res) => res.status(204).end());
+
 
 //Middlewares
 app.use(cors({
@@ -22,6 +23,13 @@ app.use(cors({
 }))
 app.use(express.json()); //parse incoming request in json format
 app.use(cookieParser())
+
+app.use((req, res, next) => {
+    if (req.path === "/favicon.ico" || req.path === "/favicon") {
+        return res.status(204).end(); // No Content response
+    }
+    next();
+});
 
 // root Endpoint
 app.get("/", (req, res) => {
