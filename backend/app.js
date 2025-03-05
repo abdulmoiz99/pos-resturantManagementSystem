@@ -30,6 +30,8 @@ app.get("/", (req, res) => {
     // throw err;
 
 })
+app.get('/favicon.ico', (req, res) => res.status(204).end());
+
 
 // Other Endpoints
 app.use("/api/user", require("./routes/userRoute"));
@@ -37,6 +39,7 @@ app.use("/api/order", require("./routes/orderRoute"));
 app.use("/api/table", require("./routes/tableRoutes"));
 app.use("/api/category", require("./routes/categoryRoute"));
 app.use("/api/dish", require("./routes/dishRoute"));
+
 
 
 //global error handler
