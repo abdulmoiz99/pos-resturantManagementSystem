@@ -34,14 +34,9 @@ app.use((req, res, next) => {
 
 // root Endpoint
 app.get("/", (req, res) => {
-
     res.json({message : "HEllo from POS Server"})
     // const err = createHttpError(404,"something went wrong!");
     // throw err;
-
-
-
-    
 })
 
 
@@ -57,6 +52,9 @@ app.use("/api/dish", require("./routes/dishRoute"));
 //global error handler
 app.use(globalErrorHandle);
 
+if (!config.port) {
+    console.log("PORT is not defined in the environment variables");
+}
 app.listen(PORT,()=>{
 
     console.log(`POS Server listening on port ${PORT}`);
